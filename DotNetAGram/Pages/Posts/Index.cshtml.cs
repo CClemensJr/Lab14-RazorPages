@@ -12,7 +12,10 @@ namespace DotNetAGram.Pages.Posts
     {
         private readonly IPost _post;
 
-
+        public IndexModel(IPost post)
+        {
+            _post = post;
+        }
 
         public void OnGet()
         {
