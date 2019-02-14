@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DotNetAGram.Models.Services
 {
-    public class PostService : IPost
+    public class PostService //: IPost
     {
         private DotNetAGramDbContext _table { get; }
 
@@ -26,15 +26,15 @@ namespace DotNetAGram.Models.Services
         /// </summary>
         /// <param name="post"></param>
         /// <returns>A Task object</returns>
-        public async Task CreatePost(Post post)
-        {
-            if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) == null)
-            {
-                await _table.Posts.Add(post);
+        //public async Task CreatePost(Post post)
+        //{
+        //    if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) == null)
+        //    {
+        //        await _table.Posts.Add(post);
 
-                await _table.SaveChangesAsync();
-            }
-        }
+        //        await _table.SaveChangesAsync();
+        //    }
+        //}
 
 
         /// <summary>
@@ -42,17 +42,17 @@ namespace DotNetAGram.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns>A Task object</returns>
-        public async Task DeletePost(int id)
-        {
-            Post post = await _table.Posts.FindAsync(id);
+        //public async Task DeletePost(int id)
+        //{
+        //    Post post = await _table.Posts.FindAsync(id);
 
-            if (post != null)
-            {
-                _table.Remove(post);
+        //    if (post != null)
+        //    {
+        //        _table.Remove(post);
 
-                 await _table.SaveChangesAsync();
-            }
-        }
+        //         await _table.SaveChangesAsync();
+        //    }
+        //}
 
 
         /// <summary>
@@ -60,17 +60,17 @@ namespace DotNetAGram.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns>An Task object</returns>
-        public async Task EditPost(int id)
-        {
-            Post post = _table.Posts.FindAsync(id);
+        //public async Task EditPost(int id)
+        //{
+        //    Post post = _table.Posts.FindAsync(id);
 
-            if (post != null)
-            {
-                await _table.Posts.UpdateAsync(post);
+        //    if (post != null)
+        //    {
+        //        await _table.Posts.UpdateAsync(post);
 
-                await _table.SaveChangesAsync();
-            }
-        }
+        //        await _table.SaveChangesAsync();
+        //    }
+        //}
 
 
         /// <summary>
@@ -78,24 +78,24 @@ namespace DotNetAGram.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns>A Task object of type Post</returns>
-        public async Task<Post> GetPost(int id)
-        {
-            Post post = await _table.Post.FindAsync(id);
+        //public async Task<Post> GetPost(int id)
+        //{
+        //    Post post = await _table.Post.FindAsync(id);
 
-            if (post != null)
-            {
-                return post;
-            }
-        }
+        //    if (post != null)
+        //    {
+        //        return post;
+        //    }
+        //}
 
 
         /// <summary>
         /// This method returns a list of all posts in the db
         /// </summary>
         /// <returns>A list of Post objects</returns>
-        public async Task<IEnumerable<Post>> GetAllPosts()
-        {
-            return await _table.Posts.ToListAsync();
-        }
+        //public async Task<IEnumerable<Post>> GetAllPosts()
+        //{
+        //    return await _table.Posts.ToListAsync();
+        //}
     }
 }
