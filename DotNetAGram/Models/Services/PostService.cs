@@ -72,10 +72,19 @@ namespace DotNetAGram.Models.Services
         }
 
 
-
-        public Task<Post> GetPost(int id)
+        /// <summary>
+        /// This method takes an id, searches for it in the database, and returns it if it exists.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A Task object of type Post</returns>
+        public async Task<Post> GetPost(int id)
         {
-            throw new NotImplementedException();
+            Post post = await _table.Post.FindAsync(id);
+
+            if (post != null)
+            {
+                return post;
+            }
         }
 
 
