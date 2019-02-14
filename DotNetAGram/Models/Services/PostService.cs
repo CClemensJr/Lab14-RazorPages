@@ -31,14 +31,26 @@ namespace DotNetAGram.Models.Services
             if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) == null)
             {
                 await _table.Posts.Add(post);
+
                 await _table.SaveChangesAsync();
             }
         }
 
-
-        public Task DeletePost(int id)
+        /// <summary>
+        /// This method takes and ID, searches for a matching record in the DB, deletes it, then saves the db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A Task object</returns>
+        public async Task DeletePost(int id)
         {
-            throw new NotImplementedException();
+            Post post = await _table.Posts.FindAsync(id);
+
+            if (post != null)
+            {
+                _table.Remove(post);
+
+                 await _table.SaveChangesAsync();
+            }
         }
 
         public Task EditPost(int id)
