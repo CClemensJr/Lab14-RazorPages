@@ -14,7 +14,7 @@ namespace DotNetAGram.Models.Interfaces
         Task<Post>GetPost(int id);
 
         // ReadAll
-        Task<IEnumerable<Post>> GetPosts();
+        Task<IEnumerable<Post>> GetAllPosts();
 
         // Update
         Task EditPost(int id);

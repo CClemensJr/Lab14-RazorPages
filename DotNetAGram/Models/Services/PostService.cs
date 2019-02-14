@@ -88,10 +88,13 @@ namespace DotNetAGram.Models.Services
         }
 
 
-
-        public Task<IEnumerable<Post>> GetPosts()
+        /// <summary>
+        /// This method returns a list of all posts in the db
+        /// </summary>
+        /// <returns>A list of Post objects</returns>
+        public async Task<IEnumerable<Post>> GetAllPosts()
         {
-            throw new NotImplementedException();
+            return await _table.Posts.ToListAsync();
         }
     }
 }
