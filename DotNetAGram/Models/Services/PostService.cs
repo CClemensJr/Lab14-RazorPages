@@ -53,15 +53,32 @@ namespace DotNetAGram.Models.Services
             }
         }
 
-        public Task EditPost(int id)
+
+        /// <summary>
+        /// This method takes an id, searches for it in the database, updates the record if it exists, then saves the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>An Task object</returns>
+        public async Task EditPost(int id)
         {
-            throw new NotImplementedException();
+            Post post = _table.Posts.FindAsync(id);
+
+            if (post != null)
+            {
+                await _table.Posts.UpdateAsync(post);
+
+                await _table.SaveChangesAsync();
+            }
         }
+
+
 
         public Task<Post> GetPost(int id)
         {
             throw new NotImplementedException();
         }
+
+
 
         public Task<IEnumerable<Post>> GetPosts()
         {
