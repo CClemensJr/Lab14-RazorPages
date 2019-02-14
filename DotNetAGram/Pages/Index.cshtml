@@ -11,6 +11,8 @@
 {
     <h1>@post.Author</h1>
     <h3>@post.PostDate</h3>
-    <a asp-page="/Posts/Index" asp-route-id="@post.ID"><img src=@post.ImageURL /></a>
+    <a asp-page="/Posts/Index" asp-route-id="@post.ID">
+        <img src="@post.ImageURL" />
+    </a>
     <p>@post.Description</p>
 }
