@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using DotNetAGram.Models.Services;
+using DotNetAGram.Models.Interfaces;
 
 namespace DotNetAGram
 {
@@ -32,6 +34,8 @@ namespace DotNetAGram
             services.AddMvc();
 
             services.AddDbContext<DotNetAGramDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IPost, PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +48,6 @@ namespace DotNetAGram
 
             app.UseMvc();
             app.UseStaticFiles();
-
         }
     }
 }
