@@ -26,8 +26,9 @@ namespace DotNetAGram.Pages.Posts
             _post = post;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
+            Post = await _post.GetPost(ID);
         }
     }
 }
