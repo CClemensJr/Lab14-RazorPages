@@ -26,6 +26,10 @@ namespace DotNetAGram.Pages.Posts
             _post = post;
         }
 
+        /// <summary>
+        /// This method sends the object to the page with the same ID
+        /// </summary>
+        /// <returns>A Task object</returns>
         public async Task OnGet()
         {
             Post = await _post.GetPost(ID);
