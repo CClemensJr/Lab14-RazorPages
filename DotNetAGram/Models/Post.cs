@@ -11,6 +11,6 @@ namespace DotNetAGram.Models
         public string Author { get; set; }
         public string Description { get; set; }
         public string ImageURL { get; set; }
-        public string PostDate { get; set; }
+        public DateTime PostDate { get; set; }
     }
 }

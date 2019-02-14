@@ -26,41 +26,46 @@ namespace DotNetAGram.Data
                     new Post
                     {
                         ID = 1,
-                        Title = "Dogs in the Snow",
+                        Author = "ChattleBrand65",
                         Description = "Gunner and Yuna playing in snow at the dog park for the first time.",
-                        ImageURL = "https://placeimg.com/640/480/animals"
+                        ImageURL = "https://placeimg.com/640/480/animals",
+                        PostDate = DateTime.Now
                     },
 
                     new Post
                     {
                         ID = 2,
-                        Title = "Dogs at the Beach",
+                        Author = "ChattleBrand65",
                         Description = "Gunner and Yuna playing at the beach for the first time.",
-                        ImageURL = "https://placeimg.com/640/480/animals"
+                        ImageURL = "https://placeimg.com/640/480/animals",
+                        PostDate = DateTime.Now
                     },
 
                     new Post
                     {
                         ID = 3,
-                        Title = "Dogs in the Volcano",
+                        Author = "ChattleBrand65",
                         Description = "Gunner and Yuna playing in a volcano for the first time.",
-                        ImageURL = "https://placeimg.com/640/480/animals"
+                        ImageURL = "https://placeimg.com/640/480/animals",
+                        PostDate = DateTime.Now
                     },
 
                     new Post
                     {
                         ID = 4,
-                        Title = "Dogs in the Jungle",
+                        Author = "ChattleBrand65",
                         Description = "Gunner and Yuna playing in the jungle for the first time.",
-                        ImageURL = "https://placeimg.com/640/480/animals"
+                        ImageURL = "https://placeimg.com/640/480/animals",
+                        PostDate = DateTime.Now
                     },
 
                     new Post
                     {
                         ID = 5,
-                        Title = "Dogs in the Whitehouse",
+                        Author = "ChattleBrand65",
                         Description = "Gunner and Yuna playing in the White House for the first time.",
-                        ImageURL = "https://placeimg.com/640/480/animals"
+                        ImageURL = "https://placeimg.com/640/480/animals",
+                        PostDate = DateTime.Now
                     });
 
         }

@@ -9,7 +9,8 @@
 
 @foreach (var post in posts)
 {
-    <h1>@post.Title</h1>
+    <h1>@post.Author</h1>
+    <h3>@post.PostDate</h3>
     <img src=@post.ImageURL />
     <p>@post.Description</p>
 }
