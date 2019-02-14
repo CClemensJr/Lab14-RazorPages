@@ -8,6 +8,13 @@ namespace DotNetAGram.Models.Services
 {
     public class PostService : IPost
     {
+        private DotNetAGramDbContext _table { get; }
+
+        public PostService(DotNetAGramDbContext post)
+        {
+            _table = post;
+        }
+
         public Task CreatePost(Post post)
         {
             throw new NotImplementedException();
