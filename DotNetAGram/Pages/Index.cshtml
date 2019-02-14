@@ -2,3 +2,7 @@
 @using DotNetAGram.Models.Interfaces
 
 @inject IPost  PostServices
+
+@{ 
+    var posts = await PostServices.GetAllPosts();
+}
