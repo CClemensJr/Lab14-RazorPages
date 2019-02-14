@@ -16,6 +16,10 @@ namespace DotNetAGram
     {
         public IConfiguration Configuration { get; set; }
 
+        /// <summary>
+        /// This custom constructor allows for facilitation of IConfiguration interface
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

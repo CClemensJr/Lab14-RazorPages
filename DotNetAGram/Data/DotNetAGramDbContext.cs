@@ -64,5 +64,7 @@ namespace DotNetAGram.Data
                     });
 
         }
+
+        public DbSet<Post> Posts { get; set; }
     }
 }
