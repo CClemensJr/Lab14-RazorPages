@@ -28,10 +28,13 @@ namespace DotNetAGram.Models.Services
         /// <returns>A Task object</returns>
         public async Task CreatePost(Post post)
         {
-            await _table.Posts.Add(post);
-
-            await _table.SaveChangesAsync();
+            if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) == null)
+            {
+                await _table.Posts.Add(post);
+                await _table.SaveChangesAsync();
+            }
         }
+
 
         public Task DeletePost(int id)
         {
