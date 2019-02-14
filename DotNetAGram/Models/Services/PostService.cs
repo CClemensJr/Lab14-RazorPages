@@ -1,4 +1,5 @@
-﻿using DotNetAGram.Models.Interfaces;
+﻿using DotNetAGram.Data;
+using DotNetAGram.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,26 @@ namespace DotNetAGram.Models.Services
     {
         private DotNetAGramDbContext _table { get; }
 
+        /// <summary>
+        /// Custom constructor that facilitates dependency injection
+        /// </summary>
+        /// <param name="post"></param>
         public PostService(DotNetAGramDbContext post)
         {
             _table = post;
         }
 
-        public Task CreatePost(Post post)
+
+        /// <summary>
+        /// This method takes a post object, checks if it exists in the database, adds it to the db if it doesn't, and then saves the db
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns>A Task object</returns>
+        public async Task CreatePost(Post post)
         {
-            throw new NotImplementedException();
+            await _table.Posts.Add(post);
+
+            await _table.SaveChangesAsync();
         }
 
         public Task DeletePost(int id)
