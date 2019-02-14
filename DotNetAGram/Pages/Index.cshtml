@@ -6,3 +6,10 @@
 @{ 
     var posts = await PostServices.GetAllPosts();
 }
+
+@foreach (var post in posts)
+{
+    <h1>@post.Title</h1>
+    <img src=@post.ImageURL />
+    <p>@post.Description</p>
+}
