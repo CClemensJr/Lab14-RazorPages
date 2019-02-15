@@ -5,6 +5,7 @@
 
 @{ 
     var posts = await PostServices.GetAllPosts();
+    ViewData["Title"] = "View All Posts";
 }
 
 @foreach (var post in posts)
