@@ -3,11 +3,19 @@
 @{
 }
 
+<div>
+    <label asp-for="Post.Author"></label>
 
-<h1>@Model.Post.Author</h1>
-<h3>@Model.Post.PostDate</h3>
-<img src=@Model.Post.ImageURL />
-<p>@Model.Post.Description</p>
+    <label asp-for="Post.PostDate"></label>
+</div>
+<div>
+    <a asp-page="/Posts/Index" asp-route-id="Post.ID">
+        <img src="@Model.Post.ImageURL" />
+    </a>
+</div>
+<div>
+    <p>Post.Description</p>
+</div>
 
 <a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID">Edit Description</a>
 
