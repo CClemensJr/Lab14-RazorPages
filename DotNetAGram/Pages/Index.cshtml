@@ -9,10 +9,17 @@
 
 @foreach (var post in posts)
 {
-    <h1>@post.Author</h1>
-    <h3>@post.PostDate</h3>
-    <a asp-page="/Posts/Index" asp-route-id="@post.ID">
-        <img src="@post.ImageURL" />
-    </a>
-    <p>@post.Description</p>
+    <div>
+        <label asp-for="@post.Author">@post.Author</label>
+
+        <label asp-for="@post.PostDate">@post.PostDate</label>
+    </div>
+    <div>
+        <a asp-page="/Posts/Index" asp-route-id="@post.ID">
+            <img src="@post.ImageURL" />
+        </a>
+    </div>
+    <div>
+        <p>@post.Description</p>
+    </div>
 }
