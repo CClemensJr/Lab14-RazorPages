@@ -3,7 +3,11 @@
 @{
 }
 
+
 <h1>@Model.Post.Author</h1>
 <h3>@Model.Post.PostDate</h3>
 <img src=@Model.Post.ImageURL />
 <p>@Model.Post.Description</p>
+
+<a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID">Edit Description</a>
+
