@@ -9,6 +9,9 @@ namespace DotNetAGram.Pages.Posts
 {
     public class EditModel : PageModel
     {
+        [FromRoute]
+        public int? ID { get; set; }
+
         public void OnGet()
         {
 
