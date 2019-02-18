@@ -37,7 +37,7 @@ namespace DotNetAGram.Pages.Posts
 
             await _post.EditPost(post);
 
-            return RedirectToPage("/Posts/Index");
+            return RedirectToPage("/Index");
         }
     }
 }
