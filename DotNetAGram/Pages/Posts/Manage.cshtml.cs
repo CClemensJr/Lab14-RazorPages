@@ -46,7 +46,7 @@ namespace DotNetAGram.Pages.Posts
             var post = await _post.GetPost(ID.GetValueOrDefault()) ?? new Post();
 
             post.Author = Post.Author;
-            post.PostDate = Post.PostDate;
+            post.PostDate = DateTime.Now;
             post.ImageURL = Post.ImageURL;
             post.Description = Post.Description;
 
