@@ -5,18 +5,23 @@
     ViewData["Title"] = "Edit Post";
 }
 
-<div>
-    <label asp-for="Post.Author"></label>
-
-    <label asp-for="Post.PostDate"></label>
-</div>
-<div>
-     <img src="@Model.Post.ImageURL" />
-</div>
 <form method="post">
+    <div>
+        <label asp-for="Post.Author"></label>
+        <input asp-for="Post.Author" />
+
+        <label asp-for="Post.PostDate"></label>
+        <input asp-for="Post.PostDate" />
+    </div>
+    <div>
+        <label asp-for="Post.ImageURL"></label>
+        <input asp-for="Post.ImageURL" />
+    </div>
+
+    <label asp-for="Post.Description"></label>
     <textarea rows="5" asp-for="Post.Description">@Model.Post.Description</textarea>
 
-    <button type="submit">Save Changes</button>
+    <button type="submit">Save</button>
 </form>
 
 <a asp-page="/Posts/Index" asp-route-id="@Model.Post.ID">Back</a>
