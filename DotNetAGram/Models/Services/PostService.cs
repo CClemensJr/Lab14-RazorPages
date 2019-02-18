@@ -98,5 +98,25 @@ namespace DotNetAGram.Models.Services
         {
             return await _table.Posts.ToListAsync();
         }
+
+
+        /// <summary>
+        /// This method either updates the post or adds a new one
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns>A Task object</returns>
+        public async Task SavePost(Post post)
+        {
+            if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) == null)
+            {
+                _table.Posts.Add(post);
+            }
+            else
+            {
+                _table.Posts.Update(post);
+            }
+
+            await _table.SaveChangesAsync();
+        }
     }
 }
