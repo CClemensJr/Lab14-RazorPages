@@ -34,22 +34,25 @@ namespace DotNetAGram.Pages.Posts
         /// <returns>A Task object</returns>
         public async Task OnGet()
         {
-            Post = await _post.GetPost(ID.GetValueOrDefault());
+            Post = await _post.GetPost(ID.GetValueOrDefault()) ?? new Post();
         }
 
         /// <summary>
-        /// This method updates the post upon form submission then redirects to the index page
+        /// This method updates the post or creates a new post based upon form submission then redirects to the index page
         /// </summary>
         /// <returns>A redirect to the index page</returns>
         public async Task<IActionResult> OnPost()
         {
-            var post = await _post.GetPost(ID.GetValueOrDefault());
+            var post = await _post.GetPost(ID.GetValueOrDefault()) ?? new Post();
 
+            post.Author = Post.Author;
+            post.PostDate = Post.PostDate;
+            post.ImageURL = Post.ImageURL;
             post.Description = Post.Description;
 
-            await _post.EditPost(post);
+            await _post.SavePost(post);
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index", new { id = post.ID });
         }
 
     }
