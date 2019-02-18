@@ -10,11 +10,14 @@ namespace DotNetAGram.Pages.Posts
 {
     public class EditModel : PageModel
     {
+        private readonly IPost _post;
+
         [FromRoute]
         public int? ID { get; set; }
 
         [BindProperty]
         public Post Post { get; set; }
+
 
         public void OnGet()
         {
