@@ -15,7 +15,7 @@
     <p>@Model.Post.Description</p>
 </div>
 
-<button><a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID">Edit Description</a></button>
-<button type="submit" asp-page-handler="Delete">Delete Post</button>
-<button><a asp-page="/Index">Back</a></button>
+<a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID" class="btn btn-info">Edit Description</a>
+<button type="submit" asp-page-handler="Delete" class="btn btn-warning">Delete Post</button>
+<a asp-page="/Index" class="btn btn-secondary">Back</a>
 

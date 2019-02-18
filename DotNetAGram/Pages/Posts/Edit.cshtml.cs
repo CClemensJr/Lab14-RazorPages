@@ -39,5 +39,12 @@ namespace DotNetAGram.Pages.Posts
 
             return RedirectToPage("/Index");
         }
+
+        public async Task<IActionResult> OnPostDelete()
+        {
+            await _post.DeletePost(ID.Value);
+
+            return RedirectToPage("/Index");
+        }
     }
 }
