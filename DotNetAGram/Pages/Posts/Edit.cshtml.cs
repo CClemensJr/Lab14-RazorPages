@@ -18,6 +18,10 @@ namespace DotNetAGram.Pages.Posts
         [BindProperty]
         public Post Post { get; set; }
 
+        public EditModel(IPost post)
+        {
+            _post = post;
+        }
 
         public void OnGet()
         {
