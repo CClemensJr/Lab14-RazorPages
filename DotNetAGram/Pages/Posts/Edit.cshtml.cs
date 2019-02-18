@@ -31,7 +31,7 @@ namespace DotNetAGram.Pages.Posts
 
         public async Task<IActionResult> OnPost()
         {
-            var post = await _post.GetPost(ID.GetValueOrDefault()) ?? new Post();
+            var post = await _post.GetPost(ID.GetValueOrDefault());
 
             post.Author = Post.Author;
             post.PostDate = Post.PostDate;
@@ -40,7 +40,7 @@ namespace DotNetAGram.Pages.Posts
 
             await _post.EditPost(post);
 
-            return RedirectToPage("/Posts/Index", new { id = post.ID });
+            return RedirectToPage("/Posts/Index");
         }
     }
 }
