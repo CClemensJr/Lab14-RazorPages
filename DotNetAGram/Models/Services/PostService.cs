@@ -61,11 +61,9 @@ namespace DotNetAGram.Models.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns>An Task object</returns>
-        public async Task EditPost(int id)
+        public async Task EditPost(Post post)
         {
-            Post post = await _table.Posts.FindAsync(id);
-
-            if (post != null)
+            if (await _table.Posts.FirstOrDefaultAsync(p => p.ID == post.ID) != null)
             {
                 _table.Posts.Update(post);
 
