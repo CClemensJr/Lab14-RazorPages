@@ -34,5 +34,16 @@ namespace DotNetAGram.Pages.Posts
         {
             Post = await _post.GetPost(ID);
         }
+
+        /// <summary>
+        /// This method deletes a post and redirects to the index page
+        /// </summary>
+        /// <returns>A redirect to the index page</returns>
+        public async Task<IActionResult> OnPostDelete()
+        {
+            await _post.DeletePost(ID);
+
+            return RedirectToPage("/Index");
+        }
     }
 }
