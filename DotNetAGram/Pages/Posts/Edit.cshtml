@@ -1,22 +1,24 @@
-﻿@page
+﻿@page "{id?}"
 @model DotNetAGram.Pages.Posts.EditModel
 @{
     Layout = null;
     ViewData["Title"] = "Edit Post";
 }
 
-<form action="/" method="post">
+<div>
     <label asp-for="Post.Author"></label>
+
     <label asp-for="Post.PostDate"></label>
-
-    <a asp-page="/Posts/Index" asp-route-id="Post.ID">
-        <img src="@Model.Post.ImageURL" />
-    </a>
-
-    <textarea rows="5" asp-for="Post.Description"></textarea>
+</div>
+<div>
+     <img src="@Model.Post.ImageURL" />
+</div>
+<form method="post">
+    <textarea rows="5" asp-for="Post.Description">@Model.Post.Description</textarea>
 
     <button type="submit">Save Changes</button>
-    <button type="submit" asp-page-handler="Delete">Delete Post</button>
 </form>
 
-<a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID">Edit Description</a>
+<button type="submit" asp-page-handler="Delete">Delete Post</button>
+
+<a asp-page="/Posts/Index" asp-route-id="@Model.Post.ID">Back</a>

@@ -26,16 +26,13 @@ namespace DotNetAGram.Pages.Posts
 
         public async Task OnGet()
         {
-            Post = await _post.GetPost(ID.GetValueOrDefault()) ?? new Post();
+            Post = await _post.GetPost(ID.GetValueOrDefault());
         }
 
         public async Task<IActionResult> OnPost()
         {
             var post = await _post.GetPost(ID.GetValueOrDefault());
 
-            post.Author = Post.Author;
-            post.PostDate = Post.PostDate;
-            post.ImageURL = Post.ImageURL;
             post.Description = Post.Description;
 
             await _post.EditPost(post);
