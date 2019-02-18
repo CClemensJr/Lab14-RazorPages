@@ -17,12 +17,12 @@ namespace DotNetAGram.Models.Interfaces
         Task<IEnumerable<Post>> GetAllPosts();
 
         // Update
-        Task EditPost(int id);
+        Task EditPost(Post post);
 
         // Destroy
         Task DeletePost(int id);
 
         // Save
-        Task SaveAsync(Post post);
+        // Task SaveAsync(Post post);
     }
 }
