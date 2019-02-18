@@ -19,16 +19,28 @@ namespace DotNetAGram.Pages.Posts
         [BindProperty]
         public Post Post { get; set; }
 
+        /// <summary>
+        /// This constructor allows the IPost interface to be accessed in the Posts Index Controller
+        /// </summary>
+        /// <param name="post"></param>
         public EditModel(IPost post)
         {
             _post = post;
         }
 
+        /// <summary>
+        /// This method sends the object to the page with the same ID
+        /// </summary>
+        /// <returns>A Task object</returns>
         public async Task OnGet()
         {
             Post = await _post.GetPost(ID.GetValueOrDefault());
         }
 
+        /// <summary>
+        /// This method updates the post upon form submission then redirects to the index page
+        /// </summary>
+        /// <returns>A redirect to the index page</returns>
         public async Task<IActionResult> OnPost()
         {
             var post = await _post.GetPost(ID.GetValueOrDefault());
@@ -40,11 +52,5 @@ namespace DotNetAGram.Pages.Posts
             return RedirectToPage("/Index");
         }
 
-        public async Task<IActionResult> OnPostDelete()
-        {
-            await _post.DeletePost(ID.Value);
-
-            return RedirectToPage("/Index");
-        }
     }
 }
