@@ -21,5 +21,8 @@ namespace DotNetAGram.Models.Interfaces
 
         // Destroy
         Task DeletePost(int id);
+
+        // Save
+        Task SaveAsync(Post post);
     }
 }
