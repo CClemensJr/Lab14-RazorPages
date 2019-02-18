@@ -5,18 +5,16 @@
 }
 
 <div>
-    <label asp-for="Post.Author"></label>
-
-    <label asp-for="Post.PostDate"></label>
+    <label asp-for="Post.Author">@Model.Post.Author</label>
+    <label asp-for="Post.PostDate">@Model.Post.PostDate</label>
 </div>
 <div>
-    <a asp-page="/Posts/Index" asp-route-id="Post.ID">
-        <img src="@Model.Post.ImageURL" />
-    </a>
+    <img src="@Model.Post.ImageURL" />
 </div>
 <div>
-    <p>Post.Description</p>
+    <p>@Model.Post.Description</p>
 </div>
 
 <a asp-page="/Posts/Edit" asp-route-id="@Model.Post.ID">Edit Description</a>
+<a asp-page="/Posts/Index">Back</a>
 
