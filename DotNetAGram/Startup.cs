@@ -33,8 +33,8 @@ namespace DotNetAGram
         {
             services.AddMvc();
 
-            //services.AddDbContext<DotNetAGramDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDbContext<DotNetAGramDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProductionConnection")));
+            //services.AddDbContext<DotNetAGramDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<DotNetAGramDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:ProductionConnection"]));
 
             services.AddScoped<IPost, PostService>();
         }
