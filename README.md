@@ -1,54 +1,46 @@
-# async inn
-> the only hotel chain where guests can come and go as they please... at the same time.
-> please visits[https://asyncinnbychachaclem.azurewebsites.net/] to learn more!
+# puptastic!
+> the best puppy-based image site on the interweb!
+> please visit [https://puptasticbychachaclem.azurewebsites.net/] to see adorable puppies!
 
 ## summary
 ```
-	The purpose of this application is to become intimately familiar with MVC through
-	the creation of a hotel management system.
+	Puptastic meets a special need in the lives of its users.
+	Science has proven that puppies lift up the spirits of people
+	so when one of our users needs a quick pick-me-up, they can 
+	visit puptastic.io to ooh and awww over all of the adorable puppies.
+
+	Puptastic is similar to Instagram in the users are able to post
+	their images on the site but the content of the images must be
+	specific to puppies.
 ```
 
-## example
-![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/homepage.PNG)
 
 ## usage
 ```
-	1. Run the application.
-	2. Click on Hotels to manage hotels.
-	3. Click on Rooms to manage rooms.
-	4. Click on Amenities to manage amenities.
-	5. Click on RoomAmenities to link amenities to existing rooms.
-	6. Click on HotelRooms to add existing rooms to hotels.
+	1. Visit [https://puptasticbychachaclem.azurewebsites.net/]
+	2. Look at the puppies.
+	3. If you want to upload a picture of your puppy, click on the "Add" button.
+	4. Enter your details and click "Submit"!
+	5. To edit the details of an image, Click on the image then click "Edit".
+	6. Update any pertinent information then click "Submit"!
+	7. If you want to delete an image, click on the image then click "Delete"!
 ```
 
+## example
+### uploading a new image
+![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/homepage.PNG)
 
-## installation
-```
-	1. Click on green "Clone or download" button.
-	2. Click on the clipboard.
-	3. Clone the repository to your projects folder.
-	4. Open the project in Visual Studio.
-	5. Run the application.
-```
+### editing an existing image
+![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/homepage.PNG)
 
-## schema
+### deleting an existing image
+![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/homepage.PNG)
+
+## architectural design
 ![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/schema.PNG)
 
-### overview
-```
-	A Hotel has many HotelRooms, but a HotelRoom can belong to only one Hotel.
-	A HotelRoom can belong to only one Room but a Room can have many HotelRooms.
-	A Room can have many RoomAmenities but RoomAmenities can only belong to one Room.
-	Amenities can have many RoomAmenities but RoomAmenities can only have one Amenities.
-```
-
-### relationships
-```
-	A Hotel object contains the name, address, and phone number for each location. The HotelRoom table is
-	a way of linking up Rooms to Hotels in the system. A Room is essentially a layout so each HotelRoom
-	can only be based on one layout. These Room layouts also include the RoomAmenities which links
-	the Room to the Amenities in the systen.
-```
+## technologies used
+> C# / ASP.NET CORE MVC / Razor Pages / Azure SQL Server / Azure Blob Storage / BootStrap
 
 ## author
 
@@ -56,5 +48,4 @@
 
 
 ## license
-```
-	This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+> This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

@@ -8,6 +8,8 @@
     ViewData["Title"] = "View All Posts";
 }
 
+<button><a asp-page="/Posts/Manage" asp-route-id="" class="btn btn-info">Add a new Post</a></button>
+
 @foreach (var post in posts)
 {
     <div>
