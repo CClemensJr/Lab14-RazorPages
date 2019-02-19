@@ -37,10 +37,12 @@
 ![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/homepage.PNG)
 
 ## architectural design
-![alt text](https://github.com/CClemensJr/AsyncInn/blob/master/AsyncInn/wwwroot/images/schema.PNG)
+```
+	
+```
 
 ## technologies used
-> C# / ASP.NET CORE MVC / Razor Pages / Azure SQL Server / Azure Blob Storage / BootStrap
+> C# / ASP.NET CORE MVC / Razor Pages / Azure SQL Server / Azure Blob Storage / BootStrap / Visual Studio
 
 ## author
 
