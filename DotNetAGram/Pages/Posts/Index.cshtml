@@ -1,0 +1,25 @@
+﻿@page "{id}"
+@model DotNetAGram.Pages.Posts.IndexModel
+@{
+    ViewData["Title"] = "View Post";
+}
+
+
+<form method="post">
+    <div>
+        <label asp-for="Post.Author">@Model.Post.Author</label>
+        <label asp-for="Post.PostDate">@Model.Post.PostDate</label>
+    </div>
+    <div>
+        <img src="@Model.Post.ImageURL" />
+    </div>
+    <div>
+        <p>@Model.Post.Description</p>
+    </div>
+
+    <button type="submit" asp-page-handler="Delete" class="btn btn-warning">Delete Post</button>
+</form>
+
+<a asp-page="/Posts/Manage" asp-route-id="@Model.Post.ID" class="btn btn-info">Edit Description</a>
+<a asp-page="/Index" class="btn btn-secondary">Back</a>
+
