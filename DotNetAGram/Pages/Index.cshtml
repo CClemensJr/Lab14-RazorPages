@@ -10,22 +10,20 @@
 }
 
 <div class="container">
+    <button><a asp-page="/Posts/Manage" asp-route-id="" class="btn btn-info">Add a new Post</a></button>
+
     @foreach (var post in posts)
     {
-        <div>
-            <label asp-for="@post.Author">@post.Author</label>
-
-            <label asp-for="@post.PostDate">@post.PostDate</label>
-        </div>
-        <div>
+        <div class="card mb-4">
             <a asp-page="/Posts/Index" asp-route-id="@post.ID">
-                <img src="@post.ImageURL" />
+                <img class="card-img-top" src="@post.ImageURL" alt="Card image cap">
             </a>
-        </div>
-        <div>
-            <p>@post.Description</p>
+            <div class="card-body">
+                <h2 class="card-title" asp-for="@post.Author">@post.Author</h2>
+                <h3 class="card-title" asp-for="@post.PostDate">@post.PostDate</h3>
+                <p class="card-text">@post.Description</p>
+            </div>
         </div>
     }
 
-    <button><a asp-page="/Posts/Manage" asp-route-id="" class="btn btn-info">Add a new Post</a></button>
 </div>
