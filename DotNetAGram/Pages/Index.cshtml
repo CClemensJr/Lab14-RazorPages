@@ -6,23 +6,24 @@
 @{ 
     var posts = await PostServices.GetAllPosts();
     ViewData["Title"] = "View All Posts";
+    Layout = "_Layout";
 }
 
-<button><a asp-page="/Posts/Manage" asp-route-id="" class="btn btn-info">Add a new Post</a></button>
+<div class="container">
+    <button><a asp-page="/Posts/Manage" asp-route-id="" class="btn btn-info">Add a new Post</a></button>
 
-@foreach (var post in posts)
-{
-    <div>
-        <label asp-for="@post.Author">@post.Author</label>
+    @foreach (var post in posts)
+    {
+        <div class="card mb-4">
+            <a asp-page="/Posts/Index" asp-route-id="@post.ID">
+                <img class="card-img-top" src="@post.ImageURL" alt="Card image cap">
+            </a>
+            <div class="card-body">
+                <h2 class="card-title" asp-for="@post.Author">@post.Author</h2>
+                <h3 class="card-title" asp-for="@post.PostDate">@post.PostDate</h3>
+                <p class="card-text">@post.Description</p>
+            </div>
+        </div>
+    }
 
-        <label asp-for="@post.PostDate">@post.PostDate</label>
-    </div>
-    <div>
-        <a asp-page="/Posts/Index" asp-route-id="@post.ID">
-            <img src="@post.ImageURL" />
-        </a>
-    </div>
-    <div>
-        <p>@post.Description</p>
-    </div>
-}
+</div>
